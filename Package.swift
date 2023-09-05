@@ -14,11 +14,15 @@ let package = Package(
             targets: ["CCMDesignSystem"]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/AlexandreBCardoso/CCMNetwork.git", .upToNextMajor(from: "1.0.1"))
+    ],
     targets: [
         .target(
             name: "CCMDesignSystem",
-            dependencies: []
+            dependencies: [
+                .product(name: "CCMNetwork", package: "CCMNetwork")
+            ]
         ),
         .testTarget(
             name: "CCMDesignSystemTests",

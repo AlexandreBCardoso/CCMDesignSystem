@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ccmnetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AlexandreBCardoso/CCMNetwork.git",
+      "state" : {
+        "revision" : "783b249dce4f729e7cb83d8f36a1b13b04fe50e5",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

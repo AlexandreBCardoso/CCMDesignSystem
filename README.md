@@ -13,3 +13,17 @@ dependencies: [
 ```
 
 ## Como usar?
+Instanciar a classe `ThemeRepository` passando as seguintes informações: uidFirebase e NetworkClient.
+```swift
+ThemeRepository(uidFirebase: String, network: NetworkClient)
+```
+
+Para obter uma lista de Theme, chamar:
+```swift
+ThemeRepository.fetchThemeList
+```
+
+Para obter um Theme específico, chamar:
+```swift
+ThemeRepository.fetchTheme(id)
+```

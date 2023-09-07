@@ -1,0 +1,17 @@
+{
+  "Result": {
+    "Name": "Light",
+    "Id": 1,
+    "IsInativo": false,
+    "CreationDate": "2023-09-06T12:34:48.473",
+    "ChangeDate": null,
+    "Uid": "2023-09-06a43fe065-20c6-47bd-ac06-acb31380bdff",
+    "UidFirebase": "UidFirebase",
+    "IsChanged": false
+  },
+  "ResultJson": null,
+  "IsSucess": true,
+  "Message": null,
+  "Exception": null,
+  "StackTrace": null
+}

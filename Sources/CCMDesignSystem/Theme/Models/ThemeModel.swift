@@ -12,12 +12,12 @@ public struct ThemeModel {
     let uid: String
     let uidFirebase: String
     
-    public init(name: String, id: Int, isInativo: Bool, uid: String, uidFirebase: String) {
-        self.name = name
-        self.id = id
-        self.isInativo = isInativo
-        self.uid = uid
-        self.uidFirebase = uidFirebase
-    }
+//    public init(name: String, id: Int, isInativo: Bool, uid: String, uidFirebase: String) {
+//        self.name = name
+//        self.id = id
+//        self.isInativo = isInativo
+//        self.uid = uid
+//        self.uidFirebase = uidFirebase
+//    }
 }
 

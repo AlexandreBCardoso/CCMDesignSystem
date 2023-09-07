@@ -26,7 +26,10 @@ let package = Package(
         ),
         .testTarget(
             name: "CCMDesignSystemTests",
-            dependencies: ["CCMDesignSystem"]
+            dependencies: ["CCMDesignSystem"],
+            resources: [
+                .process("Resources")
+            ]
         ),
     ]
 )

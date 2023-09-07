@@ -1,35 +1,39 @@
 //
 //  ThemeNetworkRequestTestCase.swift
-//  
+//  CCMDesignSystem
 //
 //  Created by Alexandre Cardoso on 06/09/23.
 //
 
+@testable import CCMDesignSystem
 import XCTest
 
 final class ThemeNetworkRequestTestCase: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_caseGetListTheme() throws {
+        let uidFirebaseExpected = "any-uidFirebase"
+        let sut = ThemeNetworkRequest.getListTheme(uidFirebaseExpected)
+        
+        XCTAssertEqual(sut.path, "/Api/Theme/GetListaTheme")
+        XCTAssertNil(sut.headers)
+        let queryItems = try XCTUnwrap(sut.queryItems)
+        XCTAssertEqual(queryItems.count, 1)
+        XCTAssertEqual(queryItems, ["uIdFirebase": uidFirebaseExpected])
+        XCTAssertEqual(sut.method, .GET)
+        XCTAssertNil(sut.body)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_caseGetThemeById() throws {
+        let idExpected = 0
+        let uidFirebaseExpected = "any-uidFirebase"
+        let sut = ThemeNetworkRequest.getThemeById(id: idExpected, uidFirebase: uidFirebaseExpected)
+        
+        XCTAssertEqual(sut.path, "/Api/Theme/GetThemeById")
+        XCTAssertNil(sut.headers)
+        let queryItems = try XCTUnwrap(sut.queryItems)
+        XCTAssertEqual(queryItems.count, 2)
+        XCTAssertEqual(queryItems, ["id": "\(idExpected)", "uIdFirebase": uidFirebaseExpected])
+        XCTAssertEqual(sut.method, .GET)
+        XCTAssertNil(sut.body)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

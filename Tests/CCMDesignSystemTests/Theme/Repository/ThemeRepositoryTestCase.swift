@@ -13,7 +13,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
 
     func test_fetchThemeList_withSuccess_oneTheme() throws {
         let expectation = expectation(description: "ThemeRepository.fetchThemeList")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         let dataFake = try XCTUnwrap(makeData(with: "listOneTheme"))
         networkStub.completionHandler = .success(dataFake)
 
@@ -38,7 +38,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
 
     func test_fetchThemeList_withSuccess_twoTheme() throws {
         let expectation = expectation(description: "ThemeRepository.fetchThemeList")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         let dataFake = try XCTUnwrap(makeData(with: "listTwoTheme"))
         networkStub.completionHandler = .success(dataFake)
 
@@ -68,7 +68,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
     
     func test_fetchThemeList_withError_NetworkError() throws {
         let expectation = expectation(description: "ThemeRepository.fetchThemeList")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         networkStub.completionHandler = .failure(.networkError)
 
         sut.fetchThemeList { result in
@@ -88,7 +88,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
     
     func test_fetchThemeList_withError_parse() throws {
         let expectation = expectation(description: "ThemeRepository.fetchThemeList")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         let dataFake = try XCTUnwrap(makeData(with: "themeById"))
         networkStub.completionHandler = .success(dataFake)
 
@@ -108,7 +108,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
     
     func test_fetchTheme_withSuccess_ThemeById() throws {
         let expectation = expectation(description: "ThemeRepository.fetchTheme")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         let dataFake = try XCTUnwrap(makeData(with: "themeById"))
         networkStub.completionHandler = .success(dataFake)
 
@@ -132,7 +132,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
 
     func test_fetchTheme_withError_NetworkError() throws {
         let expectation = expectation(description: "ThemeRepository.fetchTheme")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         networkStub.completionHandler = .failure(.networkError)
         
         sut.fetchTheme(with: 1) { result in
@@ -152,7 +152,7 @@ final class ThemeRepositoryTestCase: XCTestCase {
     
     func test_fetchTheme_withError_parse() throws {
         let expectation = expectation(description: "ThemeRepository.fetchThemeList")
-        let (sut, networkStub) = makeSUT(idFirebase: "uidFirebase")
+        let (sut, networkStub) = makeSUT(uidFirebase: "uidFirebase")
         let dataFake = try XCTUnwrap(makeData(with: "listOneTheme"))
         networkStub.completionHandler = .success(dataFake)
 
@@ -173,9 +173,9 @@ final class ThemeRepositoryTestCase: XCTestCase {
 
 extension ThemeRepositoryTestCase {
     
-    func makeSUT(idFirebase: String) -> (sut: ThemeRepository, network: NetworkClientStub) {
+    func makeSUT(uidFirebase: String) -> (sut: ThemeRepository, network: NetworkClientStub) {
         let networkClientStub = NetworkClientStub()
-        let sut = ThemeRepository(idFirebase: idFirebase, network: networkClientStub)
+        let sut = ThemeRepository(uidFirebase: uidFirebase, network: networkClientStub)
         
         return (sut, networkClientStub)
     }

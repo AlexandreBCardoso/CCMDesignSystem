@@ -17,8 +17,8 @@ public final class ThemeRepository: GetThemeDataSource {
     private let uidFirebase: String
     private let network: NetworkClient
     
-    public init(idFirebase: String, network: NetworkClient) {
-        self.uidFirebase = idFirebase
+    public init(uidFirebase: String, network: NetworkClient) {
+        self.uidFirebase = uidFirebase
         self.network = network
     }
     

@@ -9,8 +9,8 @@ import CCMNetwork
 import Foundation
 
 enum ThemeNetworkRequest: NetworkRequest {
-    case getListTheme(_ idFirebase: String)
-    case getThemeById(id: Int, idFirebase: String)
+    case getListTheme(_ uidFirebase: String)
+    case getThemeById(id: Int, uidFirebase: String)
     
     var path: String {
         switch self {
@@ -25,14 +25,14 @@ enum ThemeNetworkRequest: NetworkRequest {
     
     var queryItems: [String: String]? {
         switch self {
-            case let .getListTheme(idFirebase):
+            case let .getListTheme(uidFirebase):
                 return [
-                    "uIdFirebase": idFirebase,
+                    "uIdFirebase": uidFirebase,
                 ]
-            case let .getThemeById(id, idFirebase):
+            case let .getThemeById(id, uidFirebase):
                 return [
                     "id": "\(id)",
-                    "uIdFirebase": idFirebase,
+                    "uIdFirebase": uidFirebase,
                 ]
         }
     }

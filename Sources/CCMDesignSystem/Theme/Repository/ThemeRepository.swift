@@ -14,16 +14,16 @@ public protocol GetThemeDataSource {
 }
 
 public final class ThemeRepository: GetThemeDataSource {
-    private let idFirebase: String
+    private let uidFirebase: String
     private let network: NetworkClient
     
     public init(idFirebase: String, network: NetworkClient) {
-        self.idFirebase = idFirebase
+        self.uidFirebase = idFirebase
         self.network = network
     }
     
     public func fetchThemeList(completion: @escaping (Result<[ThemeModel], Error>) -> Void) {
-        network.execute(ThemeNetworkRequest.getListTheme(idFirebase)) { result in
+        network.execute(ThemeNetworkRequest.getListTheme(uidFirebase)) { result in
             switch result {
                 case let .success(data):
                     let decoder = JSONDecoder()
@@ -42,7 +42,7 @@ public final class ThemeRepository: GetThemeDataSource {
     }
     
     public func fetchTheme(with id: Int, completion: @escaping (Result<ThemeModel, Error>) -> Void) {
-        network.execute(ThemeNetworkRequest.getThemeById(id: id, idFirebase: idFirebase)) { result in
+        network.execute(ThemeNetworkRequest.getThemeById(id: id, uidFirebase: uidFirebase)) { result in
             switch result {
                 case let .success(data):
                     let decoder = JSONDecoder()

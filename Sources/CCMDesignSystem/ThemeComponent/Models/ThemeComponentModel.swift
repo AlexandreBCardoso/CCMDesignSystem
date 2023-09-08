@@ -12,7 +12,7 @@ public struct ThemeComponentModel {
     let backgroundColor: String
     let fontName: String
     let fontSize: Int
-    let style: String
+    let style: Int
     let id: Int
     let isInativo: Bool
     let uid: String

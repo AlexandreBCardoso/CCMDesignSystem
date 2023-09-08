@@ -13,11 +13,11 @@ struct ThemeComponentResponse: Decodable {
     let backgroundColor: String
     let fontName: String
     let fontSize: Int
-    let style: String
+    let style: Int
     let id: Int
     let isInativo: Bool
     let creationDate: String
-    let changeDate: String
+    let changeDate: String?
     let uid: String
     let uidFirebase: String
     let isChanged: Bool

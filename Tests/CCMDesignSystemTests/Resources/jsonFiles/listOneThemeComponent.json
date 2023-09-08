@@ -1,0 +1,28 @@
+[
+  {
+    "ThemeId": 1,
+    "Theme": {
+      "Name": "Light",
+      "Id": 1,
+      "IsInativo": false,
+      "CreationDate": "2023-09-06T12:34:48.473",
+      "ChangeDate": null,
+      "Uid": "2023-09-06a43fe065-20c6-47bd-ac06-acb31380bdff",
+      "UidFirebase": "CodandoComMoa",
+      "IsChanged": false
+    },
+    "Name": "customButtonPrimary",
+    "ForegroundColor": "white",
+    "BackgroundColor": "#3C58C1",
+    "FontName": "Roboto",
+    "FontSize": 24,
+    "Style": 3,
+    "Id": 1,
+    "IsInativo": false,
+    "CreationDate": "2023-09-06T12:34:48.787",
+    "ChangeDate": null,
+    "Uid": "2023-09-0642b567a2-d0a0-4c86-bfb4-00fa5db2914b",
+    "UidFirebase": "CodandoComMoa",
+    "IsChanged": false
+  }
+]

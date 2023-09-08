@@ -1,6 +1,6 @@
 //
 //  ThemeRepositoryTestCase.swift
-//  CCMDesignSystem
+//  CCMDesignSystemTests
 //
 //  Created by Alexandre Cardoso on 06/09/23.
 //

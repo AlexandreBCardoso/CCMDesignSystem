@@ -14,4 +14,13 @@ struct ThemeComponentByIdResponse: Decodable {
     let message: String?
     let exception: String?
     let stackTrace: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case themeComponent = "Result"
+        case resultJson = "ResultJson"
+        case isSucess = "IsSucess"
+        case message = "Message"
+        case exception = "Exception"
+        case stackTrace = "StackTrace"
+    }
 }

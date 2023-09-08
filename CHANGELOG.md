@@ -7,6 +7,13 @@ Change Log
 
 _07-09-2023_
 
+* Feature https://github.com/AlexandreBCardoso/CCMDesignSystem/issues/5 - Criação chamada de ThemeComponent
+
+
+## Version 1.1.0
+
+_07-09-2023_
+
 * Feature https://github.com/AlexandreBCardoso/CCMDesignSystem/issues/3 - Criação chamada de Theme
 
 

@@ -27,3 +27,18 @@ Para obter um Theme específico, chamar:
 ```swift
 ThemeRepository.fetchTheme(id)
 ```
+
+Instanciar a classe `ThemeComponentRepository` passando as seguintes informações: uidFirebase e NetworkClient.
+```swift
+ThemeComponentRepository(uidFirebase: String, network: NetworkClient)
+```
+
+Para obter uma lista de ThemeComponent, informar o themeId:
+```swift
+ThemeComponentRepository.fetchThemeComponentList(themeId)
+```
+
+Para obter um ThemeComponent específico, informar o id:
+```swift
+ThemeComponentRepository.fetchThemeComponent(id)
+```

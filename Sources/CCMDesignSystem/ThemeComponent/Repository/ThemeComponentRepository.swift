@@ -9,8 +9,8 @@ import CCMNetwork
 import Foundation
 
 public protocol GetThemeComponentDataSource {
-    func fetchThemeComponentList(with themeId: Int, completion: @escaping (Result<[ThemeComponentModel], Error>) -> Void)
-    func fetchThemeComponent(with id: Int, completion: @escaping (Result<ThemeComponentModel, Error>) -> Void)
+    func fetchThemeComponentList(themeId: Int, completion: @escaping (Result<[ThemeComponentModel], Error>) -> Void)
+    func fetchThemeComponent(id: Int, completion: @escaping (Result<ThemeComponentModel, Error>) -> Void)
 }
 
 public final class ThemeComponentRepository: GetThemeComponentDataSource {
@@ -23,7 +23,7 @@ public final class ThemeComponentRepository: GetThemeComponentDataSource {
     }
     
     public func fetchThemeComponentList(
-        with themeId: Int,
+        themeId: Int,
         completion: @escaping (Result<[ThemeComponentModel], Error>) -> Void
     ) {
         let request = ThemeComponentNetworkRequest.getListThemeComponent(themeId: themeId, uIdFirebase: uidFirebase)
@@ -45,7 +45,7 @@ public final class ThemeComponentRepository: GetThemeComponentDataSource {
     }
     
     public func fetchThemeComponent(
-        with id: Int,
+        id: Int,
         completion: @escaping (Result<ThemeComponentModel, Error>) -> Void
     ) {
         let request = ThemeComponentNetworkRequest.getThemeComponentById(id: id, uIdFirebase: uidFirebase)
